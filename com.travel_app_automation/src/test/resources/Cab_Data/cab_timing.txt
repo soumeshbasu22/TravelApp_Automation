@@ -1,0 +1,2 @@
+pickup=Esplanade
+Drop=Siliguri

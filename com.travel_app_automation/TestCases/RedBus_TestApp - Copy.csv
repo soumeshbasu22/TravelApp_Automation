@@ -1,0 +1,9 @@
+﻿Sl No,Scenario,Description,TestCase,Pass/Fail,Test Data,Linked Issues
+1,Searching buses without logging in,Validate if the user can search buses without logging in',Validate if the user can open redbus official site,P,,
+,,,Validate if the user can search buses by providing destinations and date,P,,
+,,,Validate if the user can see a page with the entered route displayed,P,,
+,,,Validate if the user can click on 'View Seats' button,P,,
+2,OTP Login after searching buses without signing in,Validate if the user can login using OTP successfully when required,Validate if the user can enter his/her phone number while booking a seat,P,,
+,,,Validated if the error message is displayed if number of digits is not 10,F,,
+,,,Validate if the user is able to click on 'View OTP' button,P,,
+,,,Validate if the user is logged in successfully by entering the OTP,,,

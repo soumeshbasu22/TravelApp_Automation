@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="TravelTest">
+  <groups>
+  <run>
+  <exclude name="Smoke Test"/>
+  </run>
+  </groups>
+    <classes>
+      <class name="com.travel_app_automation.Tests.TestCases"/>
+      <class name="com.travel_app_automation.Tests.TestCases_Set2"/>
+      <class name="com.travel_app_automation.Tests.TestCases_CabRentals"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
