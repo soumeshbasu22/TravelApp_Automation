@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="10" total="11" passed="1">
+<testng-results skipped="0" failed="0" ignored="10" total="12" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="23746" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:37 IST">
+  <suite name="Suite" duration-ms="70105" started-at="2023-01-02T14:25:12 IST" finished-at="2023-01-02T14:26:22 IST">
     <groups>
       <group name="Cab Rentals">
-        <method signature="TestCases_CabRentals.cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" class="com.travel_app_automation.Tests.TestCases_CabRentals"/>
+        <method signature="TestCases_CabRentals.bus_booking()[pri:12, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="bus_booking" class="com.travel_app_automation.Tests.TestCases_CabRentals"/>
+        <method signature="TestCases_CabRentals.cab_or_bus_option()[pri:11, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" class="com.travel_app_automation.Tests.TestCases_CabRentals"/>
       </group> <!-- Cab Rentals -->
     </groups>
-    <test name="TravelTest" duration-ms="23746" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:37 IST">
+    <test name="TravelTest" duration-ms="70105" started-at="2023-01-02T14:25:12 IST" finished-at="2023-01-02T14:26:22 IST">
       <class name="com.travel_app_automation.Tests.TestCases_CabRentals">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="setUp" is-config="true" duration-ms="14815" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:28 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="setUp" is-config="true" duration-ms="12568" started-at="2023-01-02T14:25:12 IST" finished-at="2023-01-02T14:25:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" duration-ms="6899" started-at="2022-12-29T12:38:28 IST" finished-at="2022-12-29T12:38:35 IST">
+        <test-method status="PASS" signature="cab_or_bus_option()[pri:11, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" duration-ms="6138" started-at="2023-01-02T14:25:25 IST" finished-at="2023-01-02T14:25:31 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cab_or_bus_option -->
-        <test-method status="PASS" signature="reports(org.testng.ITestResult)[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="reports" is-config="true" duration-ms="1922" started-at="2022-12-29T12:38:35 IST" finished-at="2022-12-29T12:38:37 IST">
+        <test-method status="PASS" signature="reports(org.testng.ITestResult)[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="reports" is-config="true" duration-ms="1188" started-at="2023-01-02T14:25:31 IST" finished-at="2023-01-02T14:25:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cab_or_bus_option status=SUCCESS method=TestCases_CabRentals.cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233] output={null}]]]>
+                <![CDATA[[TestResult name=cab_or_bus_option status=SUCCESS method=TestCases_CabRentals.cab_or_bus_option()[pri:11, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reports -->
+        <test-method status="PASS" signature="bus_booking()[pri:12, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="bus_booking" duration-ms="49996" started-at="2023-01-02T14:25:32 IST" finished-at="2023-01-02T14:26:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bus_booking -->
+        <test-method status="PASS" signature="reports(org.testng.ITestResult)[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="reports" is-config="true" duration-ms="120" started-at="2023-01-02T14:26:22 IST" finished-at="2023-01-02T14:26:22 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=bus_booking status=SUCCESS method=TestCases_CabRentals.bus_booking()[pri:12, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233] output={null}]]]>
               </value>
             </param>
           </params>

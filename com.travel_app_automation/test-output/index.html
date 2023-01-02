@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +102,11 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.travel_app_automation.Tests.TestCases_CabRentals" hash-for-method="bus_booking">bus_booking</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.travel_app_automation.Tests.TestCases_CabRentals" hash-for-method="cab_or_bus_option">cab_or_bus_option</a> <!-- method navigator-link -->
@@ -125,6 +130,13 @@
               <span class="class-name">com.travel_app_automation.Tests.TestCases_CabRentals</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bus_booking">
+                  </a> <!-- bus_booking -->
+                  <span class="method-name">bus_booking</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="cab_or_bus_option">
@@ -181,6 +193,10 @@
               <span class="test-group-name">Cab Rentals</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">bus_booking</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">cab_or_bus_option</span>
                 <br/>
               </div> <!-- method-in-group -->
@@ -201,16 +217,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'cab_or_bus_option')
+data.setCell(0, 1, 'bus_booking')
 data.setCell(0, 2, 'com.travel_app_automation.Tests.TestCases_CabRentals')
-data.setCell(0, 3, 6899);
+data.setCell(0, 3, 49996);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'cab_or_bus_option')
+data.setCell(1, 2, 'com.travel_app_automation.Tests.TestCases_CabRentals')
+data.setCell(1, 3, 6138);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 56 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -278,11 +298,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">cab_or_bus_option</span>
-                <span class="method-start">14849 ms</span>
+                <span class="method-start">12588 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reports([TestResult name=cab_or_bus_option status=SUCCESS method=TestCases_CabRentals.cab_or_bus_option()[pr...)</span>
-                <span class="method-start">21757 ms</span>
+                <span class="method-start">18742 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">bus_booking</span>
+                <span class="method-start">19936 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reports([TestResult name=bus_booking status=SUCCESS method=TestCases_CabRentals.bus_booking()[pri:12, instan...)</span>
+                <span class="method-start">69934 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
