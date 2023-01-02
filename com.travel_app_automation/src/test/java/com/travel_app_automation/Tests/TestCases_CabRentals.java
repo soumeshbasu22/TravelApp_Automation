@@ -33,6 +33,7 @@ public class TestCases_CabRentals extends BaseClass {
 		or3.cabrentals_pick_dt("December 2022", 14,"1","15");
 		
 		or3.cabrentals_drp_dt("December 2022", 17, "1", "15");
+		driver.findElement(or3.search_button).click();
 		Thread.sleep(10000);
 		or3.cab_search_page("Soumesh",edp2.username(1),edp2.username(5));
 		WebDriverWait wait=new WebDriverWait(driver, 10000);
@@ -70,6 +71,7 @@ public class TestCases_CabRentals extends BaseClass {
 		boolean PMSelected=driver.findElement(By.xpath("//h6[text()='PM']")).isSelected();
 		System.out.println(AMSelected);
 		or3.cabrentals_drp_dt("December 2022", 19, "1", "15");
+		driver.findElement(or3.search_button).click();
 		Thread.sleep(4000);
 		Assert.assertEquals(driver.findElement(or3.error_msg_changeDropoff).isDisplayed(), true);
 		String msg=driver.findElement(or3.error_msg_timeRequired).getText();
@@ -96,7 +98,7 @@ public class TestCases_CabRentals extends BaseClass {
 			Assert.assertEquals(selected_dt, 19+1+(total_hr/24));
 		}
 	}
-	@Test(groups="Cab Rentals",enabled=false)
+	@Test(priority=10,groups="Cab Rentals",enabled=false)
 	public void outstation_cabRentals_SortedByprice() throws Exception {
 		test=report.createTest("Validate if price details displayed is already sorted");
 		boolean priceSorted = false;
@@ -124,11 +126,28 @@ public class TestCases_CabRentals extends BaseClass {
 		}
 		Assert.assertEquals(priceSorted, true);
 	}
-	@Test(groups="Cab Rentals")
+	@Test(priority=11,groups="Cab Rentals")
 	public void cab_or_bus_option() {
 		test=report.createTest("Validate if bus option is for 7 people max and cab is for 8 people");
 		or3=new ObjectRepository_CabRentalsPage(driver);
 		Assert.assertEquals(or3.cab_or_bus_option("Bus"), 8);
+		driver.switchTo().defaultContent();
+		driver.findElement(By.cssSelector("img.FudHijrUGCygBSqIUOu6")).click();
+		driver.findElement(By.xpath("//img[@src='/bushire/static/webv2/home/logo-rb.svg']")).click();
+	}
+	@Test(priority=12,groups="Cab Rentals")
+	public void bus_booking() throws Exception {
+		test=report.createTest("Validate if number is buses are displayed after filling correct details");
+		or3=new ObjectRepository_CabRentalsPage(driver);
+		edpc=new edp_configuration();
+		or3.cabrentals_outstation_chooseCar("Round Trip", "TT & Bus");
+		or3.cabrentals_outstation_chooseLoc(edpc.pickup_loc(), edpc.drop_loc());
+		Thread.sleep(10000);
+		or3.cabrentals_pick_dt("January 2023", 23, "1", "23");
+		or3.cabrentals_drp_dt("January 2023", 26, "1", "23");
+		
+		driver.findElement(or3.number_of_people_bus).sendKeys("10");
+		driver.findElement(or3.search_button).click();
 	}
 
 }

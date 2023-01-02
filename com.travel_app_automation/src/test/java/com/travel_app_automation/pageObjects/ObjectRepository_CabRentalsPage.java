@@ -1,12 +1,18 @@
 package com.travel_app_automation.pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.travel_app_automation.utilities.edp_configuration;
 
@@ -53,6 +59,8 @@ public class ObjectRepository_CabRentalsPage {
 	public static By change_dropoff_button=By.xpath("//*[contains(text(),'change Drop')]");
 	public static By cab_capacity=By.xpath("(//div[@class='llEWHIN0JBjiJgjIcuyh'])[2]");
 	public static By bus_capacity=By.xpath("(//div[@class='llEWHIN0JBjiJgjIcuyh'])[4]");
+	public static By number_of_people_bus=By.xpath("//input[@type='number']");
+	
 	public ObjectRepository_CabRentalsPage(WebDriver driver) {
 		this.driver=driver;
 	}
@@ -82,8 +90,8 @@ public class ObjectRepository_CabRentalsPage {
 		catch (Exception e) {
 			// TODO: handle exception
 		}
-		Thread.sleep(2000);
-		driver.findElement(pickup_loc_2).clear();
+		Thread.sleep(4000);
+		//driver.findElement(pickup_loc_2).clear();
 		driver.findElement(drop_loc_2).sendKeys(Keys.chord(Keys.CONTROL,"A"));
 		Thread.sleep(2000);
 		driver.findElement(drop_loc_2).sendKeys(Keys.BACK_SPACE);
@@ -100,11 +108,14 @@ public class ObjectRepository_CabRentalsPage {
 	}
 	public void cabrentals_pick_dt(String month_year,int date,String clock_hr_selection,String clock_min_selection) throws Exception {
 		try {
-		driver.findElement(pickup_dt).click();
-		}catch (Exception e) {
+			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pickup_dt));
+			//((JavascriptExecutor)driver).executeScript("arguments[0].click()",driver.findElement(pickup_dt));
+			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement element=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='p2seMhZLGjzfKK2OxnZS']")));
+			element.click();
+		}catch (NoSuchElementException e) {
 			driver.findElement(By.cssSelector("div.EMpsgVDccVk4TDSAFF2N")).click();    //For one way trip
 		}
-		
 		for(int i=0;i<60;i++) {
 			
 			try {
@@ -142,7 +153,7 @@ public void cabrentals_drp_dt(String month_year,int date,String clock_hr_selecti
 		//driver.findElement(clock_hr(clock_hr_selection)).click();
 		//driver.findElement(clock_min(clock_min_selection)).click();
 		driver.findElement(ok_button_in_cal).click();
-		driver.findElement(search_button).click();
+		//driver.findElement(search_button).click();
 	}
 public void cab_search_page(String uname,String email,String mobile) {
 	driver.findElement(customer_name).sendKeys(uname);

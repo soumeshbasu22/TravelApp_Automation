@@ -13,7 +13,7 @@ public class ExcelDataProvider {
 	
 	public ExcelDataProvider() throws Exception {
 		
-		String filepath="C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\Test_Data\\Bus_Vendors.xlsx";
+		String filepath="C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\Test_Data\\Bus_Vendors.xlsx";
 		FileInputStream fis=new FileInputStream(filepath);
 		wb=new XSSFWorkbook(fis);
 		sh=wb.getSheet("Sheet1");
