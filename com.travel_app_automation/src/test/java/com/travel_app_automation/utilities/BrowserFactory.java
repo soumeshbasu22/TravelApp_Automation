@@ -7,13 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BrowserFactory {
 	
 	@SuppressWarnings("deprecation")
 	public static WebDriver browser(String browsername,WebDriver driver,String url) {
 		
 		if(browsername=="Chrome") {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		else if(browsername=="Headless") {
@@ -23,7 +26,7 @@ public class BrowserFactory {
 		}
 		else if(browsername=="Edge") {
 			
-			System.setProperty("webdriver.edge.driver", "C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", "C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\msedgedriver.exe");
 			driver=new EdgeDriver();
 		}
 		driver.manage().window().maximize();

@@ -30,7 +30,7 @@ public class BaseClass {
 	@BeforeClass(groups="Smoke Test",alwaysRun = true)
 	public  WebDriver setUp() {
 		
-		String filepath="C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\Reports\\ExtentReport.html";
+		String filepath="C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\Reports\\ExtentReport.html";
 		ExtentHtmlReporter html=new ExtentHtmlReporter(filepath);
 		report=new ExtentReports();
 		report.attachReporter(html);

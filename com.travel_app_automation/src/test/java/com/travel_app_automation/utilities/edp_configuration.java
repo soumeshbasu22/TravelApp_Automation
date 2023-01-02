@@ -6,7 +6,7 @@ import java.util.Properties;
 public class edp_configuration {
 	
 	Properties prop;
-	String filepath="C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\src\\test\\resources\\Cab_Data\\cab_timing.txt";
+	String filepath="C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\src\\test\\resources\\Cab_Data\\cab_timing.txt";
 	public edp_configuration() {
 		try {
 			FileInputStream fis=new FileInputStream(filepath);

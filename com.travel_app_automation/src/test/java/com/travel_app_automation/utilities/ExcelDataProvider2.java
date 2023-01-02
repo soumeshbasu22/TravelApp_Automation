@@ -14,7 +14,7 @@ public class ExcelDataProvider2 {
 	
 	public ExcelDataProvider2() throws Exception {
 		
-		String filepath1="C:\\Users\\soumesh\\eclipse-workspace\\com.travel_app_automation\\Test_Data\\UserCred.xlsx";
+		String filepath1="C:\\Users\\soumesh\\git\\TravelApp_Automation\\com.travel_app_automation\\Test_Data\\UserCred.xlsx";
 		FileInputStream fis1=new FileInputStream(filepath1);
 		wb1=new XSSFWorkbook(fis1);
 		sh1=wb1.getSheet("Sheet1");

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="6" total="7" passed="1">
+<testng-results skipped="0" failed="0" ignored="10" total="11" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="188444" started-at="2022-11-17T22:58:03 IST" finished-at="2022-11-17T23:01:11 IST">
+  <suite name="Suite" duration-ms="23746" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:37 IST">
     <groups>
       <group name="Cab Rentals">
-        <method signature="TestCases_CabRentals.outstation_cabRentalsPage()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@1786f9d5]" name="outstation_cabRentalsPage" class="com.travel_app_automation.Tests.TestCases_CabRentals"/>
+        <method signature="TestCases_CabRentals.cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" class="com.travel_app_automation.Tests.TestCases_CabRentals"/>
       </group> <!-- Cab Rentals -->
     </groups>
-    <test name="TravelTest" duration-ms="188444" started-at="2022-11-17T22:58:03 IST" finished-at="2022-11-17T23:01:11 IST">
+    <test name="TravelTest" duration-ms="23746" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:37 IST">
       <class name="com.travel_app_automation.Tests.TestCases_CabRentals">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@1786f9d5]" name="setUp" is-config="true" duration-ms="74382" started-at="2022-11-17T22:58:03 IST" finished-at="2022-11-17T22:59:17 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="setUp" is-config="true" duration-ms="14815" started-at="2022-12-29T12:38:13 IST" finished-at="2022-12-29T12:38:28 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="outstation_cabRentalsPage()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@1786f9d5]" name="outstation_cabRentalsPage" duration-ms="113279" started-at="2022-11-17T22:59:17 IST" finished-at="2022-11-17T23:01:11 IST">
+        <test-method status="PASS" signature="cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="cab_or_bus_option" duration-ms="6899" started-at="2022-12-29T12:38:28 IST" finished-at="2022-12-29T12:38:35 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- outstation_cabRentalsPage -->
-        <test-method status="PASS" signature="reports(org.testng.ITestResult)[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@1786f9d5]" name="reports" is-config="true" duration-ms="684" started-at="2022-11-17T23:01:11 IST" finished-at="2022-11-17T23:01:11 IST">
+        </test-method> <!-- cab_or_bus_option -->
+        <test-method status="PASS" signature="reports(org.testng.ITestResult)[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233]" name="reports" is-config="true" duration-ms="1922" started-at="2022-12-29T12:38:35 IST" finished-at="2022-12-29T12:38:37 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=outstation_cabRentalsPage status=SUCCESS method=TestCases_CabRentals.outstation_cabRentalsPage()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@1786f9d5] output={null}]]]>
+                <![CDATA[[TestResult name=cab_or_bus_option status=SUCCESS method=TestCases_CabRentals.cab_or_bus_option()[pri:0, instance:com.travel_app_automation.Tests.TestCases_CabRentals@376b4233] output={null}]]]>
               </value>
             </param>
           </params>

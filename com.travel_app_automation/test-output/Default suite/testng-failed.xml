@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.travel_app_automation.Tests.TestCases">
+      <class name="com.travel_app_automation.Tests.TestCases_CabRentals">
         <methods>
+          <include name="outstation_cabRentals_SortedByprice"/>
           <include name="reports"/>
           <include name="setUp"/>
-          <include name="book_tickets"/>
         </methods>
-      </class> <!-- com.travel_app_automation.Tests.TestCases -->
+      </class> <!-- com.travel_app_automation.Tests.TestCases_CabRentals -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
