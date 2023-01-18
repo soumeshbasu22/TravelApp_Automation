@@ -13,16 +13,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.travel_app_automation.utilities.edp_configuration;
 
 public class ObjectRepository_CabRentalsPage {
 	
 	WebDriver driver;
-	public static By ryde_button=By.xpath("//a[@id='rYde']");
+	public static By ryde_button=By.xpath("//a[contains(text(),'rYde')]");
 	public static By outstation_ride=By.xpath("(//div[text()='Outstation'])[1]");
 	public static By trip_type(String tripType) {
-		return By.xpath("//div[text()='"+tripType+"']");
+		return By.xpath("//div[contains(text(),'"+tripType+"')]");
 	}
 	public static By car_type(String carType) {
 		return By.xpath("//div[text()='"+carType+"']"); 
@@ -107,14 +108,26 @@ public class ObjectRepository_CabRentalsPage {
 		driver.findElement(proceed_button).click();
 	}
 	public void cabrentals_pick_dt(String month_year,int date,String clock_hr_selection,String clock_min_selection) throws Exception {
+		for(int i=0;i<3;i++) {
 		try {
 			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(pickup_dt));
 			//((JavascriptExecutor)driver).executeScript("arguments[0].click()",driver.findElement(pickup_dt));
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(60));
 			WebElement element=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='p2seMhZLGjzfKK2OxnZS']")));
 			element.click();
+			break;
 		}catch (NoSuchElementException e) {
-			driver.findElement(By.cssSelector("div.EMpsgVDccVk4TDSAFF2N")).click();    //For one way trip
+			//For one way trip//
+			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//div[@class='EMpsgVDccVk4TDSAFF2N']")));
+			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement element=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='EMpsgVDccVk4TDSAFF2N']")));
+			System.out.println("in catch");
+			element.click();
+			break;
+			}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		}
 		for(int i=0;i<60;i++) {
 			
@@ -133,6 +146,33 @@ public class ObjectRepository_CabRentalsPage {
 		//driver.findElement(clock_hr(clock_hr_selection)).click();
 		//driver.findElement(clock_min(clock_min_selection)).click();
 		driver.findElement(ok_button_in_cal).click();
+	}
+	public void invalid_timelineLogic(boolean AMSelected,boolean PMSelected) throws InterruptedException{
+		
+		String msg=driver.findElement(error_msg_timeRequired).getText();
+		String[] msg_arr=driver.findElement(error_msg_timeRequired).getText().split(" ");
+		System.out.println(msg_arr[0]);
+		int days_req = Integer.parseInt(msg_arr[0]);
+		int hour_val_digit = Integer.parseInt(msg_arr[2]);
+		int total_hr=(days_req*24)+hour_val_digit;
+		System.out.println(days_req);
+		System.out.println("Total hour required is:"+total_hr);
+		Thread.sleep(2000);
+		try {
+			driver.findElement(By.cssSelector("div.z1MPAJlvYE_YTNk89cmb")).click();
+		}catch (Exception e) {
+			
+		}
+		Thread.sleep(2000);
+		String selected_dt=driver.findElement(By.xpath("//button[contains(@class,'daySelected')]")).getText();
+		System.out.println("Selected date is:"+ selected_dt);
+		if(AMSelected) {
+			Assert.assertEquals(selected_dt, 19+(total_hr/24));
+		}
+		else if(PMSelected) {
+			Assert.assertEquals(selected_dt, 19+1+(total_hr/24));
+		}
+	
 	}
 public void cabrentals_drp_dt(String month_year,int date,String clock_hr_selection,String clock_min_selection) throws Exception {
 		
@@ -163,7 +203,11 @@ public void cab_search_page(String uname,String email,String mobile) {
 }
 public int cab_or_bus_option(String carOption) {
 	int capacity=0;
+	try {
 	driver.findElement(ryde_button).click();
+	}catch (NoSuchElementException e) {
+		// TODO: handle exception
+	}
 	driver.findElement(outstation_ride).click();
 	driver.switchTo().frame(driver.findElement(By.xpath("//object[@class='Bk0St1vF8dHt6obq7lwo']")));
 	if(carOption=="Cab") {

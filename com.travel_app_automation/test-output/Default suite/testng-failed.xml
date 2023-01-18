@@ -5,19 +5,11 @@
     <classes>
       <class name="com.travel_app_automation.Tests.TestCases_CabRentals">
         <methods>
-          <include name="cab_or_bus_option"/>
           <include name="reports"/>
           <include name="setUp"/>
           <include name="bus_booking"/>
         </methods>
       </class> <!-- com.travel_app_automation.Tests.TestCases_CabRentals -->
-      <class name="com.travel_app_automation.Tests.TestCases">
-        <methods>
-          <include name="reports"/>
-          <include name="SearchBus"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.travel_app_automation.Tests.TestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
